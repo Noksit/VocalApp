@@ -24,3 +24,7 @@ will open http://_Something_.fr in another tab
 
 >"Recherche _Something_"
 will open DuckDuckGo searching _Something_
+
+###### Thanks
+*   [Artyom.js](https://sdkcarlos.github.io/sites/artyom.html)
+*   [Ettrics](https://codepen.io/ettrics)
