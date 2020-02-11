@@ -10,6 +10,9 @@ git clone https://github.com/Noksit/VocalApp.git
 cd VocalApp
 ```
 ```
+npm install
+```
+```
 node serv.js
 ```
 [localhost:3000](localhost:3000) and enjoy
