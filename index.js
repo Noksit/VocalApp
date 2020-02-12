@@ -1,27 +1,27 @@
 $(document).ready(() => {
     //front Merci CodePen
-    var button = $('.button');
-    var mic = button.find('svg');
-    var active = $('.active-wrapper');
-    var stop = $('.stop-button');
-    var w = $(window);
-    var vw = w.innerWidth();
-    var vh = w.innerHeight();
-    var bw = button.innerWidth();
-    var bh = button.innerHeight();
-    var s;
+    let button = $('.button');
+    let mic = button.find('svg');
+    let active = $('.active-wrapper');
+    let stop = $('.stop-button');
+    let w = $(window);
+    let vw = w.innerWidth();
+    let vh = w.innerHeight();
+    let bw = button.innerWidth();
+    let bh = button.innerHeight();
+    let s;
 
-    var clone = button.clone();
+    let clone = button.clone();
     clone.find('svg').remove();
     button.before(clone);
 
-    var open = function () {
+    let open = function () {
         if (vw > vh) {
             s = vw / bw * 1.5;
         } else {
             s = vh / bh * 1.5;
         }
-        var scale = 'scale(' + s + ') translate(-50%,-50%)';
+        let scale = 'scale(' + s + ') translate(-50%,-50%)';
 
         clone.css({
             transform: scale
@@ -41,7 +41,7 @@ $(document).ready(() => {
         return false;
     };
 
-    var close = function () {
+    let close = function () {
         jarvis.shutUp()
         jarvis.fatality()
         active.removeClass('active');
@@ -51,11 +51,12 @@ $(document).ready(() => {
 
     button.on('click', open);
     stop.on('click', close);
+    
     //jarvis
     const jarvis = new Artyom();
     demarreArtyom = () => {
 
-        var commandHello = [{
+        let commandHello = [{
             smart: true,
             indexes: ["Go *", "Recherche *"], // These spoken words will trigger the execution of the command
             action: function (index, wildcard) { // Action to be executed when a index match with spoken word
@@ -77,12 +78,6 @@ $(document).ready(() => {
                     }
                 })
 
-            }
-        }, {
-            smart: true,
-            indexes: ["*"],
-            action: function () {
-                jarvis.say("Je n'ai pas compris votre demande")
             }
         }];
         jarvis.addCommands(commandHello)
